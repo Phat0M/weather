@@ -1,5 +1,13 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-void main() {
-  runApp(const Material());
-}
+import 'package:l/l.dart';
+import 'package:weather/app.dart';
+
+Future<void>? main() => wrapLoggingCapture(
+      () => WeatherAppInitializer.initializeAppAndRun(),
+    );
+
+R? wrapLoggingCapture<R>(R Function() body) => runZonedGuarded(
+      () => l.capture(body),
+      l.e,
+    );
