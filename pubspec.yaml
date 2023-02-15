@@ -1,0 +1,69 @@
+name: weather
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_gen: ^5.1.0+1
+
+  # BLoC
+  flutter_bloc: ^8.1.1
+
+  # Code generation
+  freezed_annotation: ^2.1.0
+
+  # Logging
+  l: ^3.0.0
+
+  # Core
+  collection: ^1.16.0
+  json_serializable: ^6.3.1
+  json_annotation: ^4.6.0
+  uuid: ^3.0.6
+  meta: any
+  fast_immutable_collections: ^8.1.0
+  pure: ^0.2.0
+  stream_transform: ^2.0.0
+
+  # Store & SQL
+  shared_preferences: ^2.0.15
+
+  # DI
+  provider: ^6.0.3
+
+  # UI
+  cupertino_icons: ^1.0.5
+
+  # HTTP
+  dio: ^4.0.6
+  pretty_dio_logger: ^1.1.1
+
+  # System
+  path_provider: ^2.0.0
+  path: ^1.8.2
+
+dev_dependencies:
+  flutter_gen_runner: ^5.1.0+1
+  build_runner: ^2.3.3
+  freezed: ^2.1.0+1
+
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  dart_code_metrics: ^5.1.0
+
+flutter:
+  uses-material-design: true
+
+flutter_gen:
+  output: lib/src/common/constant/
+  line_length: 120
