@@ -5,6 +5,8 @@ part 'location_search_result.g.dart';
 
 @freezed
 class LocationSearchResult with _$LocationSearchResult {
+  const LocationSearchResult._();
+
   const factory LocationSearchResult({
     required List<LocationSearchItem> features,
   }) = _LocationSearchResult;
@@ -15,6 +17,8 @@ class LocationSearchResult with _$LocationSearchResult {
 
 @freezed
 class LocationSearchItem with _$LocationSearchItem {
+  const LocationSearchItem._();
+
   const factory LocationSearchItem({
     @JsonKey(name: 'text_ru') required String name,
     @JsonKey(name: 'place_name_ru') required String fullName,
@@ -27,6 +31,8 @@ class LocationSearchItem with _$LocationSearchItem {
 
 @freezed
 class LocationCoordinates with _$LocationCoordinates {
+  const LocationCoordinates._();
+
   const factory LocationCoordinates({
     required List<double> coordinates,
   }) = _LocationCoordinates;

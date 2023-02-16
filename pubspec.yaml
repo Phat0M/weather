@@ -25,8 +25,7 @@ dependencies:
 
   # Core
   collection: ^1.16.0
-  json_serializable: ^6.3.1
-  json_annotation: ^4.6.0
+  json_serializable: ^6.6.1
   uuid: ^3.0.6
   meta: any
   fast_immutable_collections: ^8.1.0

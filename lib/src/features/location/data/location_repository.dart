@@ -27,7 +27,7 @@ class LocationRepository implements ILocationRepository {
         _sharedPreferences = sharedPreferences;
 
   final SharedPreferences _sharedPreferences;
-  final Dio _dio; 
+  final Dio _dio;
 
   @override
   Future<Location> getCurrentLocation() {
@@ -58,11 +58,12 @@ class LocationRepository implements ILocationRepository {
     final currentLocation = currentPosition.location;
 
     return Location(
-      city: currentLocation.city,
-      fullName: '${currentLocation.city}, ${currentLocation.country.name}',
-      latitude: currentLocation.latitude,
-      longitude: currentLocation.longitude,
-    );
+        city: currentLocation.city,
+        fullName: '${currentLocation.city}, ${currentLocation.country.name}',
+        geolocation: Geolocation(
+          latitude: currentLocation.latitude,
+          longitude: currentLocation.longitude,
+        ));
   }
 
   @override
@@ -106,8 +107,10 @@ class LocationRepository implements ILocationRepository {
       (item) => Location(
         city: item.name,
         fullName: item.fullName,
-        latitude: item.geometry.coordinates[1],
-        longitude: item.geometry.coordinates[0],
+        geolocation: Geolocation(
+          latitude: item.geometry.coordinates[1],
+          longitude: item.geometry.coordinates[0],
+        ),
       ),
     )
         .handleError((error) {

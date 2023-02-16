@@ -5,6 +5,8 @@ part 'current_position_result.g.dart';
 
 @freezed
 class CurrentPositionResult with _$CurrentPositionResult {
+  const CurrentPositionResult._();
+
   const factory CurrentPositionResult({
     required CurrentLocation location,
   }) = _CurrentPositionResult;
@@ -15,6 +17,8 @@ class CurrentPositionResult with _$CurrentPositionResult {
 
 @freezed
 class CurrentLocation with _$CurrentLocation {
+  const CurrentLocation._();
+
   const factory CurrentLocation({
     required CurrentCountry country,
     required String city,
@@ -28,6 +32,8 @@ class CurrentLocation with _$CurrentLocation {
 
 @freezed
 class CurrentCountry with _$CurrentCountry {
+  const CurrentCountry._();
+
   const factory CurrentCountry({
     required String name,
   }) = _CurrentCountry;
