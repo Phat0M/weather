@@ -8,6 +8,8 @@ import 'package:weather/src/features/location/model/location.dart';
 abstract class ILocationRepository {
   Future<Location> getCurrentLocation();
 
+  Stream<Location> searchLocations({String query = ''});
+
   Future<void> saveLocation(Location location);
 }
 
@@ -66,5 +68,18 @@ class LocationRepository implements ILocationRepository {
     final result = await _sharedPreferences.setString(_locationKey, data);
 
     // TODO: if result is false - throw error.
+  }
+
+  @override
+  Stream<Location> searchLocations({String query = ''}) async* {
+    if (query.isEmpty) {
+      yield* const Stream.empty();
+      return;
+    }
+
+    // TODO: mock implementation
+    await Future.delayed(const Duration(seconds: 3));
+
+    yield* const Stream.empty();
   }
 }
